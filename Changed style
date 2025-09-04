@@ -8,3 +8,5 @@ style={{
   cursor: 'pointer',
   fontSize: 18
 }}
+
+class="border-none bg-transparent relative -right-[30px] cursor-pointer text-[18px]"
