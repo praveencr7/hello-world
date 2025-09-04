@@ -1,0 +1,10 @@
+class="text-[18px] p-[10px] pr-[32px] w-[100px] border border-blue-500"
+
+style={{
+  border: 'none',
+  background: 'transparent',
+  position: 'relative',
+  right: 30,
+  cursor: 'pointer',
+  fontSize: 18
+}}
