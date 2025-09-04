@@ -1,0 +1,42 @@
+import React, { useState } from 'react';
+// Use any icon library; here, Unicode for simplicity
+const EyeIcon = ({ open }) => <span>{open ? '🙈' : '👁️'}</span>;
+
+const CVVInput = () => {
+  const [cvv, setCVV] = useState('');
+  const [show, setShow] = useState(false);
+
+  return (
+    <div style={{ display: 'flex', alignItems: 'center', maxWidth: 220 }}>
+      <input
+        style={{ fontSize: 18, padding: '10px 32px 10px 10px', width: 100 }}
+        type={show ? 'text' : 'password'}
+        maxLength={4}
+        inputMode="numeric"
+        pattern="[0-9]*"
+        placeholder="CVV"
+        value={cvv}
+        onChange={e => setCVV(e.target.value.replace(/\D/,''))}
+        autoComplete="cc-csc"
+      />
+      <button
+        type="button"
+        aria-label={show ? 'Hide CVV' : 'Show CVV'}
+        onClick={() => setShow(s => !s)}
+        style={{
+          border: 'none',
+          background: 'transparent',
+          position: 'relative',
+          right: 30,
+          cursor: 'pointer',
+          fontSize: 18
+        }}
+        tabIndex={0}
+      >
+        <EyeIcon open={show} />
+      </button>
+    </div>
+  );
+};
+
+export default CVVInput;
